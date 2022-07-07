@@ -15,7 +15,7 @@ public class MainRunner {
 
         HealthCheckHandler healthCheckResource = new HealthCheckResource();
         RxNettyHandler mainRXNettyHandler = new RxNettyHandler("/healthcheck", new HealthCheckEndpoint(healthCheckResource));
-        HttpServer<ByteBuf, ByteBuf> rxNettyServer = RxNetty.createHttpServer(8081, mainRXNettyHandler);
+        HttpServer<ByteBuf, ByteBuf> rxNettyServer = RxNetty.createHttpServer(8085, mainRXNettyHandler);
         rxNettyServer.startAndWait();
     }
 }
